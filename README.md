@@ -1,6 +1,6 @@
 # Void Development Setup
 
-Welcome to Void! This guide explains how to set up Void for development, including installing dependencies, compiling, and running the app. It also includes detailed troubleshooting steps and requirements like Visual Studio tools.
+Welcome to Void! This guide explains how to set up Void for development, including installing dependencies, building React components, compiling, and running the app. It also includes troubleshooting steps, requirements like Visual Studio tools, and a typical development workflow.
 
 ---
 
@@ -59,28 +59,28 @@ npm install
 
 ---
 
-### 2. Compilation
+### 2. Build React Components
+Void uses React for some parts of its UI. Build the React components:
+```bash
+npm run buildreact
+```
 
-#### Compile the Project
+If you’re actively developing React components, you can use the watch mode:
+```bash
+npm run watchreact
+```
+
+---
+
+### 3. Compile the Project
+After building React components, compile the rest of the project:
 ```bash
 npm run compile
 ```
 
-#### Update Grammar and Localization Files
-If you encounter errors, ensure all localization and grammar files are updated:
-```bash
-npm run update-grammars
-npm run update-localization-extension -- en
-```
-
-#### Visual Studio Tools
-Make sure Visual Studio is correctly configured with the required tools. If you encounter build errors, recheck your installation and ensure:
-- `msbuild` is available in your terminal.
-- The correct workloads and SDKs are installed.
-
 ---
 
-### 3. Running Void
+### 4. Running Void
 
 #### Using `.bat` Files
 Void can be launched using the provided `.bat` file:
@@ -95,6 +95,44 @@ electron ./out/main.js
 ```
 
 > **Note:** Running with Electron directly may result in missing environment variables. The `.bat` file ensures proper setup.
+
+---
+
+## Development Workflow
+
+1. Build React components:
+   ```bash
+   npm run buildreact
+   ```
+2. Compile the project:
+   ```bash
+   npm run compile
+   ```
+3. Launch Void:
+   ```bash
+   .\scripts\code.bat
+   ```
+
+---
+
+## Debugging Electron
+
+To debug the Electron app:
+1. Run Electron in debug mode:
+   ```bash
+   electron --inspect ./out/main.js
+   ```
+2. Open `chrome://inspect` in your browser.
+3. Select your Electron instance to view logs and debug.
+
+---
+
+## Dependencies Overview
+
+Void relies on the following key technologies:
+- **React**: For building the UI.
+- **Electron**: For the desktop application environment.
+- **VS Code API**: To extend and integrate functionality from the Visual Studio Code platform.
 
 ---
 
