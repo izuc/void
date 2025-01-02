@@ -11,6 +11,7 @@
     "mocha": "node ../node_modules/mocha/bin/mocha"
   },
   "dependencies": {
+    "code-oss-dev-smoke-test": "file:",
     "ncp": "^2.0.0",
     "node-fetch": "^2.6.7",
     "rimraf": "3.0.2"

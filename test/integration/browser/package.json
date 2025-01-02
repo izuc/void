@@ -14,5 +14,8 @@
     "tmp": "0.0.33",
     "tree-kill": "1.2.2",
     "vscode-uri": "^3.0.2"
+  },
+  "dependencies": {
+    "code-oss-dev-integration-test": "file:"
   }
 }
